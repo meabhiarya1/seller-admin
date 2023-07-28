@@ -8,6 +8,7 @@ const Admin = () => {
     const [locals, setLocalS] = useState()
     const getLs = () => {
         setLocalS(JSON.parse(localStorage.getItem('data')))
+
     }
     // getLs()
     //Showing to screen from localStorage
@@ -32,6 +33,7 @@ const Admin = () => {
     const handleadd = (e) => {   /// Adding to LocalStorage
         arr.push(data)
         localStorage.setItem("data", JSON.stringify(arr))
+        setData({ ...data, id: "", name: "", price: "" })
         getLs();
     }
 
@@ -74,7 +76,7 @@ const Admin = () => {
             {arr.filter((el) => (el.category == "Electronics")).map((props, i) => {
                 return (
                     <tr>
-                        <Electronics {...props} />
+                        <Electronics {...props}  />
                         <td>
                             <Button id={props.id} getLs={getLs} arr={arr} />
                         </td>

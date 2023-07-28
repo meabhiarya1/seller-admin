@@ -1,9 +1,9 @@
 import React from "react";
 
-const SkinCareItems = (props) =>{
+const SkinCareItems = (props) => {
     return (
         <ul>
-            <li key={props.id}>
+            <li key={props.id + Math.random()}>
                 {props.price}-{props.category}-{props.name}
             </li>
         </ul>
